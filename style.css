@@ -1,0 +1,101 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+/* Fill with CSS-formatting when we have more structured code*/
+
+
+@media screen and (min-width: 300px ) {
+    .gridLayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .nav-left button {
+        border: none;
+        color: black;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+        /* text-decoration: none; */
+        display: grid;
+        border-style: solid;
+        border-width: 0.5px;
+        border-radius: 12px;
+        border-color: lightgray;
+        background-color: transparent;
+    }
+    .nav-right button {
+        border: none;
+        color: black;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+        /* text-decoration: none; */
+        display: grid;
+        border-style: solid;
+        border-width: 0.5px;
+        border-radius: 12px;
+        border-color: lightgray;
+        background-color: transparent;
+    }
+    .nav-left {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+    }
+    .nav-right {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+    }  
+    .mainFrame {
+        grid-column: 1;
+        grid-row: 3;
+        overflow: auto;
+    }
+} 
+
+@media screen and (min-width: 1000px ) {
+    .gridLayout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .nav-left button {
+        border: none;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin-left: auto;
+    }
+     .nav-right button {
+        border: none;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin-right: auto;
+    }  
+    button:hover {
+        background-color: gray;
+    }
+    .nav-left {
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: auto;
+        margin-top: 25px;
+        display: block;
+    }
+    .nav-right {
+        grid-column: 3;
+        grid-row: 1;
+        margin-right: auto;
+        margin-top: 25px;
+        display: block;
+    } 
+    .mainFrame {
+        grid-column: 2;
+        grid-row: 1;
+        overflow: auto;
+    }
+
+}
