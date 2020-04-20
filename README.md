@@ -1,1 +1,3 @@
-# klientprog_vt20_FRESH
+# Projektarbete Klientprogrammering VT20
+
+Brottsplatskarta
