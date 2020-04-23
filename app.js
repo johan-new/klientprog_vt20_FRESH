@@ -1,4 +1,4 @@
-// ---- ????????? ------- how to?
+// ---- ????????? ------- how to import, export från filer?
 // import Link from './link/Link.js'
 // Vue.component('Link', Link)
 
@@ -17,10 +17,36 @@ class Link {
     </div>`
     })
 // ====================================
+class DropmenuItems {
+    constructor(name) {
+    this.name = name
+    }
+    }
+    // Funkar ej, VARFÖR?
+    Vue.component('drop-items', {
+    props: {items: Array},
+    template: `<div>
+    <select name="Län">
+    <option>{{dropmenuitems.name}}
+    </option>
+    </select>
+    </div>`
+    })
+
 let app = new Vue({
 el: '#app',
 data: {
-    linkitems: [new Link('Hem', 'index.html'),
-            new Link('Om oss', 'about.html') ]
+    // Items for Link
+     linkitems: [ new Link('Hem', 'index.html'),
+                new Link('Om oss', 'about.html') ],
+    // Items for DropmenuItems   
+    dropitems: [ new DropmenuItems('Västra Götalands län'),
+                new DropmenuItems('Annat lääään') ]
+},
+methods: {
+    // Method for button 'Brott i närheten', ska kopplas till den riktiga metoden
+    getEventsNearby: function (event) {
+        console.log('ring aina')
+    }
 }
 })
