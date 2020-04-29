@@ -27,7 +27,7 @@ class DropmenuItems {
     props: {items: Array},
     template: `<div>
     <select name="Län">
-    <option>{{dropmenuitems.name}}
+    <option v-for="item in items">{{dropmenuitems.name}}
     </option>
     </select>
     </div>`
