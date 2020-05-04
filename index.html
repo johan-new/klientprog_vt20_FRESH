@@ -21,12 +21,12 @@
         <!-- Mainframe, where the content of the application while be placed, 2nd column-->
         <div class="mainFrame">
             <button v-on:click="getEventsNearby">Brott i närheten</button>
-
+            <events-component></events-component>
         </div>
 
         <!-- Right navigation bar, for more links if needed, can be used for other things aswell if need be. 3rd column -->
         <div class="nav-right">
-            <drop-items :items="dropitems"></menu-list>
+            <!-- <drop-items :items="dropitems"></menu-list> -->
         </div>
 
     </div>
