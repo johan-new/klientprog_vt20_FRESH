@@ -15,6 +15,21 @@ function getEvent(url) {
         .then (json => json.data)
 }
 
+function findMe() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+          return {
+            x: position.coords.latitude,
+            y: position.coords.longitude,
+            status: "SUCCESS"
+        }           
+        } else {
+            return {
+                status: "FAIL"
+            } 
+        }
+}
+
 /**
  * COMMENT
  * 
