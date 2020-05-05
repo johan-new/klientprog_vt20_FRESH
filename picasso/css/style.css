@@ -1,0 +1,46 @@
+body {
+    background-color: #e2e3df;
+    font-family: 'Gotu', sans-serif;
+}
+
+:focus {
+    outline-color: #5d001d;
+}
+
+input {
+    font-family: 'Gotu', sans-serif;
+}
+
+input[type="text"] {
+    background-color: #e3afbc;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    max-width: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main div {
+    border: 1px solid #5d001d;
+    background-color: #e3afbc;
+    border-radius: 4px;
+    margin: 0.4em 0;
+    padding: 0.4em;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all 1s;
+}
+
+.list-enter, .list-leave-to
+{
+    opacity: 0;
+}
