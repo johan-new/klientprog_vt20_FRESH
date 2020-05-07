@@ -1,5 +1,5 @@
 body {
-    background-color: #e2e3df;
+    background-color: blue;
     font-family: 'Gotu', sans-serif;
 }
 
@@ -28,9 +28,9 @@ input[type="text"] {
     flex-direction: column;
 }
 
-main div {
+.main {
     border: 1px solid #5d001d;
-    background-color: #e3afbc;
+    background-color: white;
     border-radius: 4px;
     margin: 0.4em 0;
     padding: 0.4em;

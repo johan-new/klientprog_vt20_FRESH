@@ -17,12 +17,8 @@
     <div id="content">
         <div id="app">
             <toast :text="errorText"></toast>
-
             <action-bar @evt="addEvent" @error="handleError"></action-bar>
             <transition-group name="list" tag="main">
-                <div v-for="evt in events" :key="evt">
-                    {{evt}}
-                </div>
             </transition-group>
         </div>
     </div>
