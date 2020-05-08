@@ -20,6 +20,8 @@
             <action-bar @evt="addEvent" @error="handleError"></action-bar>
             <transition-group name="list" tag="main">
             </transition-group>
+            <drop-menu :on-click='changeCounty' :items='countys'></drop-menu>
+	<p>Nuvarande valt län: <span>{{activeCounty}}</span></p>
         </div>
     </div>
 
