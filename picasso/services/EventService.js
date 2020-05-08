@@ -14,11 +14,7 @@ function getEvent(url) {
             return resp.json()
             })
             .then(data => {
-            for (let i = 0; i < data.data.length; i++) {              
-                console.log(data.data[0])
-                let obj = data.data[i]
-                return obj
-             }
+                return data.data
             })              
             }
 

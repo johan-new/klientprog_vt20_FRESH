@@ -21,7 +21,10 @@ export default {
         update(eventPromise) {
             eventPromise.then(evt => {
                 this.$emit('evt', evt)
-                this.list.push(evt)
+                for (let i = 0; i < evt.length; i++) {
+                    let obj = evt[i]
+                    this.list.push(obj)                    
+                }
             })
             .catch(error => this.$emit('error', error))
         },
@@ -34,7 +37,7 @@ export default {
                     <div v-for="item in list" :key="item.id" class="main"><div>Detta är titeln: {{item.title_type}}</div>
                    Description: {{ item.description }}
                    <div>Detta är content: {{item.content}} </div>
-                   <img v-for="item in list" :key="item.image" :src="item.image">
+                   <img item :key="item.image" :src="item.image">
                  
 
                    </div>
