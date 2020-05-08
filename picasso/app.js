@@ -1,10 +1,10 @@
 import ActionBar from './components/ActionBar.js'
 import ErrorToast from './components/ErrorToast.js'
-import DropMenu from './components/DropMenu.js'
+// import DropMenu from './components/DropMenu.js'
 
 Vue.component('action-bar', ActionBar)
 Vue.component('toast', ErrorToast)
-Vue.component('drop-menu', DropMenu)
+// Vue.component('drop-menu', DropMenu)
 
 let app = new Vue({
     el: '#app',
@@ -31,8 +31,8 @@ let app = new Vue({
             setTimeout(() => this.errorText = '', 3000)
         },
         // TESTAR DROP DOWN
-        changeCounty(county) {
-            this.activeCounty = county
-        }
+        // changeCounty(county) {
+        //     this.activeCounty = county
+        // }
     }
 })
