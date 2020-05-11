@@ -1,10 +1,9 @@
-import getEventsNearbyAPIURLService from './getEventsNearbyAPIURLService.js'
+import getEventsNearbyAPIURL from './LocationService.js'
 
 
 /**
  * COMMENT
  * 
- * @param {URL to web service endpoint} url 
  */
 
 
@@ -27,8 +26,7 @@ function getEvent(url) {
 
 const EventService = { 
     allEvents: () => getEvent('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n'), //alla i sthlms län
-    
-    nearby: () => getEvent(getEventsNearbyAPIURLService())
+    nearby: () => getEvent(getEventsNearbyAPIURL())
   
 }
 Object.freeze(EventService)
