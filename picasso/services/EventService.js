@@ -1,9 +1,12 @@
+import EventsNearbyService from "EventsNearbyService";
 
 /**
  * COMMENT
  * 
  * @param {URL to web service endpoint} url 
  */
+
+
 function getEvent(url) {
     // console.log(navigator.geolocation.getCurrentPosition(position))
     return fetch(url)
@@ -18,22 +21,6 @@ function getEvent(url) {
             })              
             }
 
-
-function findMe() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-          return {
-            x: position.coords.latitude,
-            y: position.coords.longitude,
-            status: "SUCCESS"
-        }           
-        } else {
-            return {
-                status: "FAIL"
-            } 
-        }
-}
-
 /**
  * COMMENT
  * 
@@ -43,7 +30,7 @@ function findMe() {
 const EventService = { 
     allEvents: () => getEvent('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n'), //alla i sthlms län
     
-    nearby: () =>  getEvent(`https://brottsplatskartan.se/api/eventsNearby?lat=${position.coords.latitude}&lng=${position.coords.longitude}`)
+    nearby: () =>  getEvent(EventsNearbyService.getEventsNearby())
   
 }
 Object.freeze(EventService)
