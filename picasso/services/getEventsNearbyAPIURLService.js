@@ -2,21 +2,32 @@
   /* getEventsNearbyAPIURLService
  *
 *     Returns correct API string
- *  @version 0.1.1
+ *  @version 0.1.2
  */
 
-let getGPScoordinates = function(options) {
-  return new Promise(function(resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options)
-  })
-}
+ let returnStr = "";
 
-async function getAPIURL() {
-  let position = await getGPScoordinates()
-  let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${position.coords.latitude}&lng=${position.coords.longitude}`
 
+   // Function that will be called if the query succeeds
+   let located = function(pos) {
+    let x = String(pos.coords.latitude);
+    let y = String(pos.coords.longitude);
+    returnStr = `https://brottsplatskartan.se/api/eventsNearby?lat=${x}&lng=${y}`;
+    console.log("DEBUG: " + returnStr);
+  };
   
-  return url
+  // Function that will be called if the query fails
+  let unlocated = function(err) {
+    console.log("DEBUG: " + err.message);
+  };
+
+
+ function getAPIURL() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(located, unlocated);
+  } 
+    
+  return returnStr;
 }
 
 export default getAPIURL;

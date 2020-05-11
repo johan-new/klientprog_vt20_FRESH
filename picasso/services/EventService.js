@@ -1,4 +1,5 @@
-import EventsNearbyService from "EventsNearbyService";
+import getEventsNearbyAPIURLService from './getEventsNearbyAPIURLService.js'
+
 
 /**
  * COMMENT
@@ -8,7 +9,6 @@ import EventsNearbyService from "EventsNearbyService";
 
 
 function getEvent(url) {
-    // console.log(navigator.geolocation.getCurrentPosition(position))
     return fetch(url)
         .then(resp => {
             if (!resp.ok) {
@@ -23,14 +23,12 @@ function getEvent(url) {
 
 /**
  * COMMENT
- * 
- * @param {text to search for} query 
  */
 
 const EventService = { 
     allEvents: () => getEvent('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n'), //alla i sthlms län
     
-    nearby: () =>  getEvent(EventsNearbyService.getEventsNearby())
+    nearby: () => getEvent(getEventsNearbyAPIURLService())
   
 }
 Object.freeze(EventService)
