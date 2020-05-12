@@ -1,5 +1,5 @@
 import getEventsNearbyAPIURL from './LocationService.js'
-
+import app from '../app.js'
 
 /**
  * COMMENT
@@ -26,8 +26,8 @@ function getEvent(url) {
 
 const EventService = { 
     allEvents: () => getEvent('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n'), //alla i sthlms län
-    nearby: () => getEvent(getEventsNearbyAPIURL())
-  
+    nearby: () => getEvent(getEventsNearbyAPIURL()),
+    countyEvents: () => getEvent(`https://brottsplatskartan.se/api/events/?area=${app.activeCounty}`)
 }
 Object.freeze(EventService)
 
