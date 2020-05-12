@@ -51,6 +51,7 @@ let app = new Vue({
 
         changeCounty(county) {
             this.activeCounty = county
+            console.log(county)
         },
         toggleShow() {
             this.showMenu = !this.showMenu
@@ -58,6 +59,7 @@ let app = new Vue({
         itemClicked(item) {
             this.toggleShow()
             this.onClick(item)
+            console.log(activeCounty + ' active')
         }  
     }
 })

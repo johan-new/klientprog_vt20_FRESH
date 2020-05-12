@@ -1,3 +1,9 @@
+/*  DropMenu
+*
+*   Creates a dropmenu for selecting län
+*
+*   @author Erik Manfredsson
+*/
 export default {
     data() {
         return {
