@@ -11,13 +11,31 @@ let app = new Vue({
     data: {
         events: [],
         errorText: '',
+        showMenu: false,
         activeCounty: 'Stockholms län',
-        countys: [
-            'Stockholms län',
-            'Västra Götalands län',
-            'Östergötlands län',
-            'Uppsala län'
-        ]
+         countys: [
+             'Blekinge län',
+             'Dalarnas län',
+             'Gotlands län',
+             'Gävleborgs län',
+             'Hallands län',
+             'Jämtlands län',
+             'Jönköpings län',
+             'Kalmar län',
+             'Kronobergs län',
+             'Norrbottens län',
+             'Skåne län',
+             'Stockholms län',
+             'Södermanlands län',
+             'Uppsala län',
+             'Värmlands län',
+             'Västerbottens län',
+             'Västernorrlands län',
+             'Västmanslands län',
+             'Västra Götalands län',
+             'Örebro län',
+             'Östergötlands län'
+         ]
     },
     methods: {
         addEvent(evt) {
@@ -30,9 +48,16 @@ let app = new Vue({
             this.errorText = error.toString()
             setTimeout(() => this.errorText = '', 3000)
         },
-        // TESTAR DROP DOWN
-        // changeCounty(county) {
-        //     this.activeCounty = county
-        // }
+
+        changeCounty(county) {
+            this.activeCounty = county
+        },
+        toggleShow() {
+            this.showMenu = !this.showMenu
+        },
+        itemClicked(item) {
+            this.toggleShow()
+            this.onClick(item)
+        }  
     }
 })
