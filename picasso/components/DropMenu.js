@@ -5,7 +5,11 @@
 *   @author Erik Manfredsson
 */
 export default {
-    // data()
+    data() {
+        return {
+            showMenu: false
+        }
+    },
     props: {
          onClick: Function,
         //   items: {
@@ -43,15 +47,12 @@ export default {
         }
     },
     methods: {
-        showAndClick() {
-
-            if (toggleShow()) {
-                this.showMenu = !this.showMenu
-            }
-            else if (itemClicked(item)) {
-                this.toggleShow()
-                this.onClick(item)
-            }
+        toggleShow() {
+            this.showMenu = !this.showMenu
+        },
+        itemClicked(item) {
+            this.toggleShow()
+            this.onClick(item)
         }
     },
     template: `
@@ -59,5 +60,7 @@ export default {
              <button @click='toggleShow' class='anchor'>Välj ett län</button>
              <div v-if='showMenu' class='menu'>
              <div class='drop-item' v-for='item in this.items' :key="item.id" @click='itemClicked(item)'>{{item}}</div>
-         </div></div>`
+             </div>
+         </div>`
 }
+  

@@ -1,4 +1,5 @@
 import EventService from '../services/EventService.js'
+import DropMenu from './DropMenu.js'
 
 export default {
     data() {
@@ -15,7 +16,13 @@ export default {
         },
         countyEvents() {
             this.$store.dispatch('update', EventService.countyEvents())
-        }
+        },
+        // toggleShow() {
+        //     this.$store.dispatch('update', DropMenu.toggleShow())
+        // },
+        // itemClicked() {
+        //     this.$store.dispatch('update', DropMenu.itemClicked())
+        // }
     },
     // Needs more formatting ofc /Erik
     template: `<div style="width: fit-content; display: flex; flex-direction: column; align-items:center;">

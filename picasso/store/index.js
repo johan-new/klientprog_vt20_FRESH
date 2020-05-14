@@ -8,6 +8,9 @@ let store = new Vuex.Store({
         addEvent(state, data) {
             console.log('hej')
             state.events.push(data)
+        },
+        toggleShow() {
+            this.showMenu = !this.showMenu
         }
     },
     actions: {
@@ -16,8 +19,8 @@ let store = new Vuex.Store({
             eventPromise.then(evt => {
                 evt.forEach(e => context.commit('addEvent', e))
             })
-                // .catch(error => this.$emit('error', error))
         },
+
     }
 })
 export default store
