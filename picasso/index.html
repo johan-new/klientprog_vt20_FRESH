@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brottsplats YRGO</title>
-
     <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.js"></script>
     <script type="module" src="app.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
@@ -16,13 +16,13 @@
 <body>
     <div id="content">
         <div id="app">
-            <toast :text="errorText"></toast>
-            <action-bar @evt="addEvent" @error="handleError"></action-bar>
+            <!-- <toast :text="errorText"></toast> -->
+            <action-bar name="hej"></action-bar>
             <transition-group name="list" tag="main">
             </transition-group>
-            <drop-menu :on-click='changeCounty' :items='countys'>
+            <drop-menu name="hej">
             </drop-menu>
-    <p>Nuvarande valt län: <span>{{activeCounty}}</span></p>
+    <!-- <p>Nuvarande valt län: <span>{{activeCounty}}</span></p> -->
         </div>
     </div>
 
