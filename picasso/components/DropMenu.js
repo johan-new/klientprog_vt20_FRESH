@@ -24,7 +24,7 @@ export default {
         itemClicked(item) {
             this.toggleShow()
             this.onClick(item)
-            console.log(item)
+            // console.log(item)
         }
     },
      template: `
