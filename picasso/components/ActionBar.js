@@ -32,11 +32,13 @@ export default {
                 <div style="margin-bottom: 0.2em;">
                     <input type="button" @click="allEvents" value="Alla händelser">
                     <input type="button" @click="nearby" value="Händelser nära mig">
-                    <div v-for="item in $store.state.events" :key="item.id" class="main"><div>Detta är titeln: {{item.title_type}}</div>
-                   Description: {{ item.description }}
-                   <div>Detta är content: {{item.content}} </div>
+                    <div v-for="item in $store.state.events" :key="item.id" class="main"><div><h3><center>{{item.title_type}}</h3></center></div>
+                    <div><center><b>{{ item.location_string }}</b></center></div>
+                    <center>{{ item.date_human }}</center>
+                   <center><i>{{ item.description }} </i></center>
+                   <div><center>{{ item.content }}</center></div>
+                    <div><center>Källa: {{ item.external_source_link }} </center></div>
                    <img item :key="item.image" :src="item.image">
-                 
 
                    </div>
                 </div>
