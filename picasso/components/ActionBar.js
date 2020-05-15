@@ -28,19 +28,33 @@ export default {
         // }
     },
     // Needs more formatting ofc /Erik
-    template: `<div>
-                    <nav class="buttonMenu-left">
-                    <input type="button" @click="allEvents" value="Alla händelser">
-                    <input type="button" @click="nearby" value="Händelser nära mig">
-                    <div v-for="item in $store.state.events" :key="item.id" class="main"><div><h3><center>{{item.title_type}}</h3></center></div>
-                    <div><center><b>{{ item.location_string }}</b></center></div>
-                    <center>{{ item.date_human }}</center>
-                   <center><i>{{ item.description }} </i></center>
-                   <div><center>{{ item.content }}</center></div>
-                    <div><center>Källa: {{ item.external_source_link }} </center></div>
+    template: `<div name="tjo bre">   
+                    <input type="button" @click="allEvents" value="Alla händelser" class="buttonMenu-left">
+                    <input type="button" @click="nearby" value="Händelser nära mig" class="buttonMenu-left">
+                    <div v-for="item in $store.state.events" :key="item.id" class="ruta">
+                    <div>{{item.title_type}}</div>
+                    <div>{{ item.location_string }}</div>
+                    <div>{{ item.date_human }}</div>
+                    <div>{{ item.description }}</div>
+                   <div>{{ item.content }}</div>
+                    <div>Källa: {{ item.external_source_link }} </div>
                    <img item :key="item.image" :src="item.image">
 
                    </div>
                    </div>
                </div>`
 }
+
+// </nav>
+// <div v-for="item in $store.state.events" :key="item.id" class="ruta">
+// <div class="events">Detta är titeln: {{item.title_type}}
+// Description: {{ item.description }}
+// <div>Detta är content: {{item.content}}
+// <img item :key="item.image" :src="item.image">
+// </div>
+
+
+/* <nav class="buttonMenu-left">
+<input type="button" @click="allEvents" value="Alla händelser" class="">
+<input type="button" @click="nearby" value="Händelser nära mig">
+</nav> */
