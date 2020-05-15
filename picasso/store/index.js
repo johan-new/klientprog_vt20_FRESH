@@ -1,5 +1,5 @@
 import EventService from '../services/EventService.js'
-
+//inga kompontnter här
 let store = new Vuex.Store({
     state: {
         events: [],
@@ -16,7 +16,7 @@ let store = new Vuex.Store({
         changeSelectedCounty(state, newCounty){
             console.log('mutation changeSelectedCounty')
             state.selectedCounty = newCounty
-            this.addEvent(state, this.state.selectedCounty)
+            //addEvent(state, this.state.selectedCounty)
         }
     },
     actions: {
@@ -29,11 +29,8 @@ let store = new Vuex.Store({
         updateCounty(context, newCounty){
             console.log('action updateCounty')
             context.commit('changeSelectedCounty', newCounty)
-            console.log(typeof newCounty)
-            //this.update(new Promise(
-            //    function (reject, resolve){
-            //        resolve()
-             //   })
+            console.log('Nu ska vi stoppa in ' + newCounty)
+            context.dispatch('update', EventService.countyEvents(newCounty))
         }
 
     }

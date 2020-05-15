@@ -15,7 +15,8 @@ export default {
             this.$store.dispatch('update', EventService.nearby())
         },
         countyEvents(newCounty) {
-            this.$store.dispatch('update', EventService.countyEvents(newCounty))
+            console.log('countyEvents ActionBar called. Parameter ' + newCounty)
+            this.$store.dispatch('update', EventService.getEvent(newCounty))
         },
 
 

@@ -27,7 +27,11 @@ function getEvent(url) {
 const EventService = { 
     allEvents: () => getEvent('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n'), //alla i sthlms län
     nearby: () => getEvent(getEventsNearbyAPIURL()),
-    countyEvents: (newCounty) => getEvent(`https://brottsplatskartan.se/api/events/?area=${newCounty}`)
+    countyEvents: (newCounty) => 
+        {
+            console.log('CountyEvents EventService called... Parameter: ' + newCounty)
+            return getEvent(`https://brottsplatskartan.se/api/events/?area=${newCounty}`)
+        }
 }
 Object.freeze(EventService)
 
