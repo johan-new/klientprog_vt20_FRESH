@@ -28,17 +28,19 @@ export default {
         // }
     },
     // Needs more formatting ofc /Erik
-    template: `<div style="width: fit-content; display: flex; flex-direction: column; align-items:center;">
-                <div style="margin-bottom: 0.2em;">
+    template: `<div>
+                    <nav class="buttonMenu-left">
                     <input type="button" @click="allEvents" value="Alla händelser">
                     <input type="button" @click="nearby" value="Händelser nära mig">
-                    <div v-for="item in $store.state.events" :key="item.id" class="main"><div>Detta är titeln: {{item.title_type}}</div>
+                    </nav>
+                    <div v-for="item in $store.state.events" :key="item.id" class="ruta">
+                    <div class="events">Detta är titeln: {{item.title_type}}
                    Description: {{ item.description }}
-                   <div>Detta är content: {{item.content}} </div>
+                   <div>Detta är content: {{item.content}} 
                    <img item :key="item.image" :src="item.image">
-                 
-
                    </div>
-                </div>
+                 
+                   </div>
+                   </div>
                </div>`
 }

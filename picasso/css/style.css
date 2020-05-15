@@ -1,48 +1,145 @@
 body {
-    background-color: blue;
-    font-family: 'Gotu', sans-serif;
+  background-color: blue;
 }
 
-:focus {
-    outline-color: #5d001d;
+.events {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  border-style: outset;
+  border-width: 0.5px;
+  border-radius: 10px;
 }
-
+pre p {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form {
+  padding-left: 15px;
+  padding-top: 10px;
+}
 input {
-    font-family: 'Gotu', sans-serif;
+  height: 18px;
 }
-
-input[type="text"] {
-    background-color: #e3afbc;
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s
 }
+/* @media screen and (min-width: 300px ) and (color) and
+(hover: none) {
+  .events {
+      font-size: 13.5px;
+      padding-left: 20px;
+  } 
+  .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+  }
+  .buttonMenu-left button {
+      border: none;
+      color: black;
+      padding: 10px 30px 10px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 5px;
+      display: grid;
+      border-style: solid;
+      border-width: 0.5px;
+      border-radius: 12px;
+      border-color: lightgray;
+      background-color: transparent;
+  }
+  .buttonMenu-right button {
+      border: none;
+      color: black;
+      padding: 10px 30px 10px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 5px;
+      display: grid;
+      border-style: solid;
+      border-width: 0.5px;
+      border-radius: 12px;
+      border-color: lightgray;
+      background-color: transparent;
+  }
+  .buttonMenu-left {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+  }
+  .buttonMenu-right {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+  }  
+  .ruta {
+      padding: 0.5em;
+      grid-column: 1;
+      grid-row: 3;
+      height: 850px;
+      overflow: auto;
+  }
+}  */
 
-#content {
-    display: flex;
-    justify-content: center;
-}
+@media screen and (min-width: 1000px ) {
+  .layout {
+      display: grid;
+      grid-template-columns: 0.7fr 1.4fr 0.7fr;
+      grid-gap: 10px;
+  }
+  /* lägg till input för formatering här, eller annat\/ */
+  .buttonMenu-left { 
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      margin: 5px;
+      margin-left: auto;
+  }
+   .buttonMenu-right button {
+      border: none;
+      color: black;
+      padding: 10px;
+      display: block;
+      font-size: 14px;
+      margin: 5px;
+      height: 30px;
+  }  
+  button:hover {
+      background-color: lightgray;
+  }
+   .buttonMenu-left {
+      grid-column: 1;
+      grid-row: 2;
+      margin-left: auto;
+      margin-top: 25px;
+      background-color: yellow;
 
-#app {
-    max-width: 30em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.main {
-    border: 1px solid #5d001d;
-    background-color: white;
-    border-radius: 4px;
-    margin: 0.4em 0;
-    padding: 0.4em;
-}
-
-.list-enter-active, .list-leave-active {
-    transition: all 1s;
-}
-
-.list-enter, .list-leave-to
-{
-    opacity: 0;
+  }
+  .buttonMenu-right {
+      grid-column: 3;
+      grid-row: 1;
+      margin-right: auto;
+      margin-top: 25px;
+      display: flex;
+  }  
+  .ruta {
+      padding: 0.5em;
+      grid-column: 2;
+      grid-row: 1;
+       /* height: 850px;  */
+      overflow: auto;
+  }
 }
 
 /* FORMATTERING FÖR DROPMENU ENDAST
