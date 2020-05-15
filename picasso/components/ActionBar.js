@@ -14,9 +14,11 @@ export default {
         nearby() {
             this.$store.dispatch('update', EventService.nearby())
         },
-        countyEvents() {
-            this.$store.dispatch('update', EventService.countyEvents())
+        countyEvents(newCounty) {
+            this.$store.dispatch('update', EventService.countyEvents(newCounty))
         },
+
+
         // toggleShow() {
         //     this.$store.dispatch('update', DropMenu.toggleShow())
         // },

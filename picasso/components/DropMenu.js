@@ -52,7 +52,8 @@ export default {
         },
         itemClicked(item) {
             this.toggleShow()
-            this.onClick(item)
+            console.log('hampus blir glad ' + item)
+            this.$store.dispatch('updateCounty', item)
         }
     },
     template: `
