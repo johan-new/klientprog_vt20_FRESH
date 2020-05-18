@@ -31,7 +31,7 @@ export default {
     template: `<div name="tjo bre">   
                     <input type="button" @click="allEvents" value="Alla händelser" class="buttonMenu-left">
                     <input type="button" @click="nearby" value="Händelser nära mig" class="buttonMenu-left">
-                    <div v-for="item in $store.state.events" :key="item.id" class="ruta">
+                    <div v-for="item in $store.state.events" class="ruta">
                     <div>{{item.title_type}}</div>
                     <div>{{ item.location_string }}</div>
                     <div>{{ item.date_human }}</div>
