@@ -124,6 +124,7 @@ input {
       margin-left: auto;
       margin-top: 25px;
       background-color: yellow;
+      height: fit-content;
 
   }
   .buttonMenu-right {
