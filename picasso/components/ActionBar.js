@@ -29,7 +29,7 @@ export default {
     },
     // Needs more formatting ofc /Erik
     template: `<div name="tjo bre">   
-                    <input type="button" @click="allEvents" value="Alla händelser" class="buttonMenu-left">
+                    <input type="button" @click="allEvents" value="Senaste händelser" class="buttonMenu-left">
                     <input type="button" @click="nearby" value="Händelser nära mig" class="buttonMenu-left">
                     <div v-for="item in $store.state.events" class="ruta">
                     <div>{{item.title_type}}</div>
