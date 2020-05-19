@@ -1,7 +1,7 @@
 export default {
     template: 
     `<div>
-    <div v-for="item in $store.state.events" :key="item.id" class="ruta">
+    <div v-for="item in $store.state.events" :key="item.id">
     <div class="events">
     <div>{{item.title_type}}</div>
     <div>{{ item.location_string }}</div>

@@ -15,19 +15,9 @@ export default {
             this.$store.dispatch('update', EventService.nearby())
         },
         countyEvents(newCounty) {
-            console.log('countyEvents ActionBar called. Parameter ' + newCounty)
             this.$store.dispatch('update', EventService.getEvent(newCounty))
         },
-
-
-        // toggleShow() {
-        //     this.$store.dispatch('update', DropMenu.toggleShow())
-        // },
-        // itemClicked() {
-        //     this.$store.dispatch('update', DropMenu.itemClicked())
-        // }
     },
-    // Needs more formatting ofc /Erik
     template: `<div> 
     <nav>
                     <input type="button" @click="allEvents" value="Alla händelser" class="anchor actionButtons">

@@ -11,11 +11,7 @@ export default {
         }
     },
     props: {
-         onClick: Function,
-        //   items: {
-        //       type: Array,
-        //       default: []
-        //   }    
+         onClick: Function,   
     },
     computed: {
         items() {
@@ -52,7 +48,6 @@ export default {
         },
         itemClicked(item) {
             this.toggleShow()
-            console.log('hampus blir glad ' + item)
             this.$store.dispatch('updateCounty', item)
         }
     },
