@@ -1,5 +1,5 @@
 body {
-    background-color:blue;
+    background-color: white;
     font-family: 'Gotu', sans-serif;
 }
 
@@ -10,6 +10,7 @@ body {
   border-style: outset;
   border-width: 0.5px;
   border-radius: 10px;
+  justify-content: center;
 }
 pre p {
   text-transform: uppercase;
@@ -17,17 +18,8 @@ pre p {
   padding-left: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-form {
-  padding-left: 15px;
-  padding-top: 10px;
-}
-input {
-  height: 18px;
-}
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.5s;
-  animation: fadeIn 0.5s
+img {
+  padding-top: 15px;
 }
 /* @media screen and (min-width: 300px ) and (color) and
 (hover: none) {
@@ -96,52 +88,44 @@ input {
       grid-gap: 10px;
   }
   /* lägg till input för formatering här, eller annat\/ */
-  .buttonMenu-left { 
-      border: none;
-      color: black;
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      font-size: 14px;
-      margin: 5px;
-      margin-left: auto;
+  .header {
+    grid-row: 1;
+    grid-column: 2;
+    max-width: 1fr;
+    overflow: hidden;
   }
-   .buttonMenu-right button {
-      border: none;
-      color: black;
-      padding: 10px;
-      display: block;
-      font-size: 14px;
-      margin: 5px;
-      height: 30px;
-  }  
+  .actionButtons { 
+    /* grid-column: 2;
+    grid-row: 2; */
+    background-color:#27AE60;
+    height: fit-content;
+    border: none;
+    color: black;
+    /* padding: 10px 10px; */
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
   button:hover {
       background-color: lightgray;
-  }
-   .buttonMenu-left {
-      grid-column: 1;
-      grid-row: 1;
-      margin-left: auto;
-      margin-top: 25px;
-      background-color: yellow;
-      height: fit-content;
-
-  }
-  .buttonMenu-right {
-      grid-column: 3;
-      grid-row: 1;
-      margin-right: auto;
-      margin-top: 25px;
-      display: flex;
-  }  
+  } 
   .ruta {
       padding: 0.5em;
       grid-column: 2;
-      grid-row: 1;
-       /* height: 850px;  */
+      grid-row: 3;
       overflow: auto;
       background-color: white;
+      border-style: solid;
+  }
+  nav {
+    display: flex;
+    font-size: 10px;
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
@@ -149,13 +133,13 @@ input {
 * GÖR OM CSS SENARE!!!!
 */
 .anchor {
-    display: flex;
-      align-items: center;
-      justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
   padding: .75rem 2rem;
   font-size: 1rem;
-  border-radius: .25rem;
+  /* border-radius: .25rem; */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
       color: #fff;
   background-color: #27AE60;
@@ -163,7 +147,7 @@ input {
 }
 
 .anchor::after {
-      display: inline-block;
+  display: inline-block;
   width: 0;
   height: 0;
   margin-left: .5em;
@@ -195,13 +179,16 @@ input {
   list-style: none;
   margin: .125rem 0 0;
   padding: .5rem 0;
+  padding: 12px;
   position: absolute;
   text-align: left;
+  margin-top: 40px;
 }
 
 .drop-item {
   color: #212529;
   padding: .25rem 1.5rem;
+  margin-right: auto;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -258,7 +245,7 @@ li a:hover {
   background-color: #555;
   color: white;
 }
-.logo-image{
+/* .logo-image{
   padding: 5px;
   width: 150px;
-}
+} */

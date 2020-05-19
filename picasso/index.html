@@ -17,25 +17,24 @@
 
     <div id="app">
         <div class="layout">
-            <!-- <div id="app" class="ruta"> -->
-            <!-- <toast :text="errorText"></toast> -->
-            <action-bar name="action-bar HMTL"></action-bar>
-            <!-- <transition-group name="list" tag="main">
-            </transition-group> -->
-            <drop-menu class="buttonMenu-left">
-
-    <ul class="sidenav">
-        <a class="navbar-brand" href="/picasso/images/brottsplatsy.png">
-            <div class="logo-image">
-                <a href="index.html">
-                  <img src="images/brottsplatsy.png" class="img-fluid" style="width:150px">
-                </a>
-                </div>
-        <li><a class="active" href="index.html">Hem</a></li>
-        <li><a href="about.html">Om oss</a></li>
-      </ul>
-
-
+            <div class="header">
+                <a class="header" href="/picasso/images/brottsplatsy2.png">
+                    <div class="logo-image">
+                        <a href="index.html">
+                            <img src="images/brottsplatsy2.png" class="img-fluid">
+                        </a>
+                    </div>
+            </div>
+            <nav>
+            <div class="actionButtons">
+                <a href="index.html" class="anchor actionButtons">Hem</a>
+                    <action-bar></action-bar>
+                    <drop-menu></drop-menu>
+                    
+                    <a href="about.html" class="anchor actionButtons">Oss</a>
+                </nav>
+                <list-items class="ruta"></list-items>
+            </div>
         </div>
     </div>
 
