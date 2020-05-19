@@ -3,7 +3,19 @@ import EventService from '../services/EventService.js'
 let store = new Vuex.Store({
     state: {
         events: [],
-        selectedCounty: "Västra Götaland"
+        selectedCounty: "Västra Götaland",
+        aboutUs: {
+            "data": {
+                "id": 1337,
+                "description": "Om oss",
+                "date_human": "Nu",
+                "content": "Tack till VueEx, JavaScript, CSS och HTML. Version 1.0. Erik Manfredsson, Simon Södergren, Johan Nyberg.",
+                "external_source_link": "#",
+                "location_string": "Göteborg",  
+                "title_type": "Om oss",
+                "image": "https://m.media-amazon.com/images/M/MV5BNmExMTkyYjItZTg0YS00NWYzLTkwMjItZWJiOWQ2M2ZkYjE4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg"
+            }                
+        }
     },
     mutations: {
         addEvent(state, data) {
@@ -11,6 +23,10 @@ let store = new Vuex.Store({
         },
         clearEvents(state){
             state.events = [] // clearing events
+        },
+        aboutUs(state) {
+            console.log('about us')
+            state.events = state.aboutUs
         },
         toggleShow() { //ANVÄNDS?????
             this.showMenu = !this.showMenu
@@ -34,6 +50,9 @@ let store = new Vuex.Store({
             context.commit('changeSelectedCounty', newCounty)
             console.log('Nu ska vi stoppa in ' + newCounty)
             context.dispatch('update', EventService.countyEvents(newCounty))
+        },
+        showAboutUs(context){
+            context.commit('aboutUs')
         }
 
     }
