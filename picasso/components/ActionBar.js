@@ -20,7 +20,7 @@ export default {
     },
     template: `<div> 
     <nav>
-                    <input type="button" @click="allEvents" value="Alla händelser" class="anchor actionButtons">
+                    <input type="button" @click="allEvents" value="Hem" class="anchor actionButtons">
                    <input type="button" @click="nearby" value="Händelser nära mig" class="anchor actionButtons"> 
              </nav></div>`
 }

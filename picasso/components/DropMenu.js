@@ -54,7 +54,7 @@ export default {
     template: `
          <div>
          <nav>
-            <button @click='toggleShow' class='anchor actionButtons' id="lan">Län</button>
+            <button @click='toggleShow' class='anchor actionButtons' id="lan">Välj ett län</button>
             <div v-if='showMenu' class="menu">
             <div class='drop-item' v-for='item in this.items' :key="item.id" @click='itemClicked(item)'>
                 {{item}}

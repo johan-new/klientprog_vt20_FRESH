@@ -2,7 +2,6 @@ body {
     background-color: white;
     font-family: 'Gotu', sans-serif;
 }
-
 .events {
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,16 +12,9 @@ body {
   justify-content: center;
   margin: 10px;
 }
-pre p {
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 img {
   padding-top: 15px;
-}
-
+} 
 /*
 * Formattering för div nedanför 
 */
@@ -39,21 +31,29 @@ img {
   font-size: 15px;
   font-weight: bolder;
 }
-/* @media screen and (min-width: 300px ) and (color) and
+@media screen and (min-width: 300px ) and (color) and
 (hover: none) {
-  .events {
-      font-size: 13.5px;
-      padding-left: 20px;
-  } 
   .layout {
       display: grid;
       grid-template-columns: 1fr;
-      grid-gap: 10px;
+      grid-gap: 10px; 
   }
-  .buttonMenu-left button {
+  nav {
+    display: flex;
+  }
+  .header {
+    grid-row: 1;
+    grid-column: 1;
+    /* max-width: 100%; */
+    overflow: hidden;
+  }
+  img {
+    max-width: 100%;
+  }
+  .actionButtons {
       border: none;
       color: black;
-      padding: 10px 30px 10px 30px;
+      /* padding: 10px 30px 10px 30px; */
       text-align: center;
       text-decoration: none;
       font-size: 14px;
@@ -65,39 +65,31 @@ img {
       border-color: lightgray;
       background-color: transparent;
   }
-  .buttonMenu-right button {
-      border: none;
-      color: black;
-      padding: 10px 30px 10px 30px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 14px;
-      margin: 5px;
-      display: grid;
-      border-style: solid;
-      border-width: 0.5px;
-      border-radius: 12px;
-      border-color: lightgray;
-      background-color: transparent;
-  }
-  .buttonMenu-left {
+  .actionButtons {
       grid-column: 1;
       grid-row: 1;
       display: flex;
   }
-  .buttonMenu-right {
-      grid-column: 1;
-      grid-row: 2;
-      display: flex;
-  }  
+  .anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent; 
+    padding: .75rem 2rem;
+    font-size: 1rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color:#27AE60;
+    border-color: #27AE60;
+    width: 100px
+  }
   .ruta {
       padding: 0.5em;
       grid-column: 1;
       grid-row: 3;
-      height: 850px;
-      overflow: auto;
+      max-width: 100%;
   }
-}  */
+}
 
 @media screen and (min-width: 1000px ) {
   .layout {
@@ -114,7 +106,6 @@ img {
   }
   .actionButtons { 
     background-color:#27AE60;
-    height: fit-content;
     border: none;
     color: black;
     text-align: center;
@@ -123,45 +114,42 @@ img {
     font-size: 14px;
     align-items: center;
     justify-content: center;
-    overflow: visible;
+    overflow: auto;
+    width: auto
   }
   button:hover {
-      background-color: lightgray;
+    background-color: lightgray;
   } 
   .ruta {
-      padding: 0.5em;
-      grid-column: 2;
-      grid-row: 3;
-      overflow: auto;
-      background-color: white;
-      /* border-style: solid;
-      border-width: 0.5px;
-      border-radius: 10px; */
+    padding: 0.5em;
+    grid-column: 2;
+    grid-row: 3;
+    overflow: auto;
+    background-color: white;
   }
   nav {
+    width: max-content;
     display: flex;
     font-size: 10px;
     grid-column: 2;
     grid-row: 2;
+    justify-content: center;
+    width: fit-content;
+  }
+  .anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    padding: .75rem 2rem;
+    font-size: 1rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #27AE60;
+    border-color: #27AE60;
+    width: 200px
   }
 }
-
-/* FORMATTERING FÖR DROPMENU ENDAST
-* GÖR OM CSS SENARE!!!!
-*/
-.anchor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  padding: .75rem 2rem;
-  font-size: 1rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-      color: #fff;
-  background-color: #27AE60;
-  border-color: #27AE60;
-}
-
 .anchor::after {
   display: inline-block;
   width: 0;
@@ -224,7 +212,7 @@ span {
 /*
 * CSS för About us sidan 
 */
-
+/* 
 .aboutmaintextbox {
   display: flex;
   justify-content: center;
@@ -238,32 +226,4 @@ span {
 .aboutmain {
   display: flex;
   justify-content: center;
-}
-
-/*
-* Navigationsbar
-*/
-
-ul.sidenav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 160px;
-  background-color: white;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #555;
-  color: white;
-}
-/* .logo-image{
-  padding: 5px;
-  width: 150px;
 } */
