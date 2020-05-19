@@ -7,8 +7,10 @@ let store = new Vuex.Store({
     },
     mutations: {
         addEvent(state, data) {
-            console.log('hej')
             state.events.push(data)
+        },
+        clearEvents(state){
+            state.events = [] // clearing events
         },
         toggleShow() { //ANVÄNDS?????
             this.showMenu = !this.showMenu
@@ -22,6 +24,7 @@ let store = new Vuex.Store({
     actions: {
         update(context, eventPromise) {
             console.log(typeof eventPromise)
+            context.commit('clearEvents')
             eventPromise.then(evt => {
                 evt.forEach(e => context.commit('addEvent', e))
             })
