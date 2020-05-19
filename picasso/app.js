@@ -1,6 +1,5 @@
 import store from './store/index.js'
 import ActionBar from './components/ActionBar.js'
-import ErrorToast from './components/ErrorToast.js'
 import DropMenu from './components/DropMenu.js'
 import ListItems from './components/ListItems.js'
 
@@ -13,7 +12,6 @@ let app = new Vue({
     components: {
         DropMenu,
         ActionBar,
-        ErrorToast,
         ListItems
     },
     created() {
