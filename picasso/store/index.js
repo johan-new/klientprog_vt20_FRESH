@@ -34,6 +34,16 @@ let store = new Vuex.Store({
         },
         changeSelectedCounty(state, newCounty) {
             state.selectedCounty = newCounty
+        },
+        removeHTML(state){
+            console.log('DEBUG: Remove state called')
+            console.log(state.events.length)
+            state.events.forEach(element => {
+                console.log('DEBUG: Remove state loop')
+                var tmp = document.createElement("DIV");
+                tmp.innerHTML = element.content;
+                element.content =  tmp.textContent || tmp.innerText || "";
+            });
         }
         },
    
@@ -43,7 +53,9 @@ let store = new Vuex.Store({
                 context.commit('clearEvents')
                 eventPromise.then(evt => {
                     evt.forEach(e => context.commit('addEvent', e))
+                    context.commit('removeHTML')
                 })
+                
             },
             updateCounty(context, newCounty) {
                 context.commit('changeSelectedCounty', newCounty)
