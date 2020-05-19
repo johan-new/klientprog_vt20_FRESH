@@ -40,6 +40,9 @@ img {
   }
   nav {
     display: flex;
+    height: 5em;
+    /* width: 20em; */
+    width: 1fr;
   }
   .header {
     grid-row: 1;
@@ -51,6 +54,7 @@ img {
     max-width: 100%;
   }
   .actionButtons {
+    
       border: none;
       color: black;
       /* padding: 10px 30px 10px 30px; */
@@ -81,7 +85,6 @@ img {
     color: #fff;
     background-color:#27AE60;
     border-color: #27AE60;
-    width: 100px
   }
   .ruta {
       padding: 0.5em;
@@ -105,6 +108,8 @@ img {
     overflow: hidden;
   }
   .actionButtons { 
+    height: 90px;
+    /* height: max-content; */
     background-color:#27AE60;
     border: none;
     color: black;
@@ -128,7 +133,6 @@ img {
     background-color: white;
   }
   nav {
-    width: max-content;
     display: flex;
     font-size: 10px;
     grid-column: 2;
@@ -137,6 +141,7 @@ img {
     width: fit-content;
   }
   .anchor {
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
