@@ -1,5 +1,6 @@
 body {
-  background-color: blue;
+    background-color:blue;
+    font-family: 'Gotu', sans-serif;
 }
 
 .events {
@@ -213,4 +214,51 @@ span {
   font-weight: bold;
   color: #229954;
   font-size: 1.25rem;
+}
+
+/*
+* CSS för About us sidan 
+*/
+
+.aboutmaintextbox {
+  display: flex;
+  justify-content: center;
+  font-family: 'Gotu', sans-serif;
+ 
+}
+.aboutmainheader {
+  display: flex;
+  justify-content: center;
+}
+.aboutmain {
+  display: flex;
+  justify-content: center;
+}
+
+/*
+* Navigationsbar
+*/
+
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 160px;
+  background-color: white;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+.logo-image{
+  padding: 5px;
+  width: 150px;
 }
