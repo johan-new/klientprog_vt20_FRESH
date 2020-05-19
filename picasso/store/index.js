@@ -1,4 +1,5 @@
 import EventService from '../services/EventService.js'
+// import FormattingHTML from '../components/FormattingHTML.js'
 //inga kompontnter här
 let store = new Vuex.Store({
     state: {
@@ -9,33 +10,27 @@ let store = new Vuex.Store({
         addEvent(state, data) {
             state.events.push(data)
         },
-        clearEvents(state){
+        clearEvents(state) {
             state.events = [] // clearing events
         },
         toggleShow() { //ANVÄNDS?????
             this.showMenu = !this.showMenu
         },
-        changeSelectedCounty(state, newCounty){
-            console.log('mutation changeSelectedCounty')
+        changeSelectedCounty(state, newCounty) {
             state.selectedCounty = newCounty
-            //addEvent(state, this.state.selectedCounty)
         }
-    },
-    actions: {
-        update(context, eventPromise) {
-            console.log(typeof eventPromise)
-            context.commit('clearEvents')
-            eventPromise.then(evt => {
-                evt.forEach(e => context.commit('addEvent', e))
-            })
         },
-        updateCounty(context, newCounty){
-            console.log('action updateCounty')
-            context.commit('changeSelectedCounty', newCounty)
-            console.log('Nu ska vi stoppa in ' + newCounty)
-            context.dispatch('update', EventService.countyEvents(newCounty))
+        actions: {
+            update(context, eventPromise) {
+                context.commit('clearEvents')
+                eventPromise.then(evt => {
+                    evt.forEach(e => context.commit('addEvent', e))
+                })
+            },
+            updateCounty(context, newCounty) {
+                context.commit('changeSelectedCounty', newCounty)
+                context.dispatch('update', EventService.countyEvents(newCounty))
+            },
         }
-
-    }
-})
+    })
 export default store
